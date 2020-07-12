@@ -287,7 +287,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>Let's Warikan</h1>
+        <h1>みんなでLet's Warikan!!!</h1>
         {/* <p>Your Truffle Box is installed and ready.</p>
         <h2>Smart Contract Example</h2>
         <p>
@@ -297,15 +297,15 @@ class App extends Component {
         <p>
           Try changing the value stored on <strong>line 40</strong> of App.js.
         </p> */}
-        <div>Your Address: {this.state.accounts[0]}</div>
-        <div>InsuranceFactory's owner address: {this.state.InsuranceFactoryAddress}</div>
+        <div>あなたのアドレス: {this.state.accounts[0]}</div>
+        <div>InsuranceFactoryのアドレス: {this.state.InsuranceFactoryAddress}</div>
         <hr />
-        <div>All Insurances</div>
+        <div>全ての保険</div>
         <div>
           {this.state.allInsurances.map((insurance, i) => {
             return (
               <div key={i}>
-                <div>insurance contract：{insurance}</div>
+                <div>保険アドレス{i+1}：{insurance}</div>
               </div>
             )
           })}
@@ -321,19 +321,19 @@ class App extends Component {
         </div>
         <div>
           <button onClick={this.setAddressMapper}>
-            setAddressMapper
+            AddressMapperをセット
           </button>
         </div>
         <div>
           <button onClick={this.createInsurance}>
-            createInsurance
+            保険を作る!
           </button>
         </div>
         <div>
-          OwningInsuranceAddress:{this.state.owningInsurace}
+          あなたの保有する保険アドレス:{this.state.owningInsurace}
         </div>
         <hr />
-        <div>Target Insurance</div>
+        <div>処理対象保険</div>
         <select
           value={this.state.selectedInsurence}
           onChange={ e => {this.updateSelectedInsurence(e)} }>
@@ -345,15 +345,15 @@ class App extends Component {
         </select>
         <div>
           <button onClick={this.joinToInsurance}>
-            joinToInsurance!
+            保険に参加する!
           </button>
         </div>
-        <div>Participants Lists</div>
+        <div>参加者リスト</div>
         <div>
           {this.state.participants.map((participantAddress, i) => {
             return (
               <div key={i}>
-                <div>participant address：{participantAddress}</div>
+                <div>参加者のアドレス：{participantAddress}</div>
               </div>
             )
           })}
@@ -368,37 +368,37 @@ class App extends Component {
         </div>
         <div>
           <button onClick={this.poolDeposit}>
-            poolDeposit
+            保険料をプールする
           </button>
         </div>
-        <div>Pooled Deposit:{this.state.PooledDeposit}</div>
+        <div>プールされた保険料:{this.state.PooledDeposit}</div>
         <hr />
-        <div>Refund Target:{this.state.RefundTarget}</div>
+        <div>請求者:{this.state.RefundTarget}</div>
         <div>
           <button onClick={this.challengeRefund}>
-            challengeRefund
+            請求をチャレンジする
           </button>
         </div>
         <div>
           <button onClick={this.approveChallenge}>
-            approveChallenge
+            請求を承認する
           </button>
         </div>
-        <div>hasBeenBuiltConsensus?:{this.state.hasBeenBuiltConsensus.toString()}</div>
+        <div>全員の承認が得られたか?:{this.state.hasBeenBuiltConsensus.toString()}</div>
         <div>
           <button onClick={this.withdrawDepositedAmout}>
-            withdrawDepositedAmout
+            保険金を引き出す
           </button>
         </div>
         <hr />
         <div>
           <button onClick={this.requireAssessment}>
-            requireAssessment
+            査定を依頼する
           </button>
         </div>
         <div>
           <button onClick={this.fetchAssessmentResult}>
-            fetchAssessmentResult(only reposten network?)
+            査定結果を取得する(only reposten network?)
           </button>
         </div>
       </div>
