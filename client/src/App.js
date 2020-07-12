@@ -354,11 +354,12 @@ class App extends Component {
           {this.state.participants.map((participantAddress, i) => {
             return (
               <div key={i}>
-                <div>参加者のアドレス：{participantAddress}</div>
+                <div>参加者のアドレス{i+1}：{participantAddress}</div>
               </div>
             )
           })}
         </div>
+        <hr />
         <div>  
           <input
             id="amount"
@@ -372,7 +373,7 @@ class App extends Component {
             保険料をプールする
           </button>
         </div>
-        <div>プールされた保険料:{this.state.PooledDeposit}</div>
+        <div>プールされた保険料:約{Number(this.state.PooledDeposit)/400000000000000000}万円</div>
         <hr />
         <div>請求者:{this.state.RefundTarget}</div>
         <div>
