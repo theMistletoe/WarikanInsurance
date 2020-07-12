@@ -321,9 +321,10 @@ class App extends Component {
         </div>
         <div>
           <button onClick={this.setAddressMapper}>
-            AddressMapperをセット
+            AddressMapperをセット(多分Factory生成時に1回だけ必要)
           </button>
         </div>
+        <hr />
         <div>
           <button onClick={this.createInsurance}>
             保険を作る!
