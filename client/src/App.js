@@ -386,7 +386,7 @@ class App extends Component {
             請求を承認する
           </button>
         </div>
-        <div>全員の承認が得られたか?:{this.state.hasBeenBuiltConsensus.toString()}</div>
+        <div>全員の承認が得られたか?: { this.state.hasBeenBuiltConsensus ? ("はい！") : ("まだ！")}</div>
         <div>
           <button onClick={this.withdrawDepositedAmout}>
             保険金を引き出す
