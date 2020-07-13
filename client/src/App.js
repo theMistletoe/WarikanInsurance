@@ -7,7 +7,7 @@ import "./App.css";
 
 class App extends Component {
   state = { 
-    InsuranceFactoryAddress: 0,
+    InsuranceFactoryAddress: '',
     web3: null,
     accounts: null,
     deployedNetwork: null,
@@ -297,15 +297,15 @@ class App extends Component {
         <p>
           Try changing the value stored on <strong>line 40</strong> of App.js.
         </p> */}
-        <div>あなたのアドレス: {this.state.accounts[0]}</div>
-        <div>InsuranceFactoryのアドレス: {this.state.InsuranceFactoryAddress}</div>
+        <div>あなたのアドレス: {this.state.accounts[0].toLowerCase()}</div>
+        <div>InsuranceFactoryのアドレス: {this.state.InsuranceFactoryAddress.toLowerCase()}</div>
         <hr />
         <div>全ての保険</div>
         <div>
           {this.state.allInsurances.map((insurance, i) => {
             return (
               <div key={i}>
-                <div>保険アドレス{i+1}：{insurance}</div>
+                <div>保険アドレス{i+1}：{insurance.toLowerCase()}</div>
               </div>
             )
           })}
@@ -331,7 +331,7 @@ class App extends Component {
           </button>
         </div>
         <div>
-          あなたの保有する保険アドレス:{this.state.owningInsurace}
+          あなたの保有する保険アドレス:{this.state.owningInsurace.toLowerCase()}
         </div>
         <hr />
         <div>処理対象保険</div>
@@ -340,7 +340,7 @@ class App extends Component {
           onChange={ e => {this.updateSelectedInsurence(e)} }>
           {this.state.allInsurances.map((insurance, i) => {
             return (
-              <option key={i} value={insurance}>{insurance}</option>
+              <option key={i} value={insurance}>{insurance.toLowerCase()}</option>
             )
           })}
         </select>
@@ -354,7 +354,7 @@ class App extends Component {
           {this.state.participants.map((participantAddress, i) => {
             return (
               <div key={i}>
-                <div>参加者のアドレス{i+1}：{participantAddress}</div>
+                <div>参加者のアドレス{i+1}：{participantAddress.toLowerCase()}</div>
               </div>
             )
           })}
@@ -375,7 +375,7 @@ class App extends Component {
         </div>
         <div>プールされた保険料:約{Number(this.state.PooledDeposit)/400000000000000000}万円</div>
         <hr />
-        <div>請求者:{this.state.RefundTarget}</div>
+        <div>請求者:{this.state.RefundTarget.toLowerCase()}</div>
         <div>
           <button onClick={this.challengeRefund}>
             請求をチャレンジする
