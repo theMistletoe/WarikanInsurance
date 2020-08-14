@@ -186,7 +186,7 @@ class App extends Component {
 
     const response = await WarikanInsurance.methods.poolDeposit().send({ 
       from: accounts[0],
-      value: Number(amount) * (10 ** 18) * (2 / 5) // about 10,000 Yen
+      value: Number(amount) * (10 ** 18) * (2 / 9) // about 10,000 Yen
     });
     // console.log(response);
     this.fetchPooledDeposit();
@@ -373,7 +373,7 @@ class App extends Component {
             保険料をプールする
           </button>
         </div>
-        <div>プールされた保険料:約{Number(this.state.PooledDeposit)/400000000000000000}万円</div>
+        <div>プールされた保険料:約{Number(this.state.PooledDeposit)/225000000000000000}万円</div>
         <hr />
         <div>請求者:{this.state.RefundTarget.toLowerCase()}</div>
         <div>
