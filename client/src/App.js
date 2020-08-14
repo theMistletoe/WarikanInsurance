@@ -373,7 +373,7 @@ class App extends Component {
             保険料をプールする
           </button>
         </div>
-        <div>プールされた保険料:約{Number(this.state.PooledDeposit)/225000000000000000}万円</div>
+        <div>プールされた保険料:約{Number(this.state.PooledDeposit)/222222222222222222}万円</div>
         <hr />
         <div>請求者:{this.state.RefundTarget.toLowerCase()}</div>
         <div>
